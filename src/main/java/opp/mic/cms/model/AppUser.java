@@ -28,9 +28,12 @@ public class AppUser extends LogEntity implements UserDetails, Serializable {
     private String username;
     private String fullname;
     private String Telephone;
+
     @JsonIgnore
     private String password;
     private String gender;
+
+    
     boolean isAccountNonExpired;
     boolean isAccountNonLocked ;
     boolean isCredentialsNonExpired ;
