@@ -141,12 +141,15 @@ public class SecurityConfig {
             authorities.add(new UserAuthority("Roles","create",demoRole));
 
             authorities.forEach(authRepo::save);
+            /*
             AppUser epps = new AppUser("epps@mail.com","Mike Epps",passwordEncoder().encode("password")
            );
             epps.setEnabled(true);
 
             epps.setGender("Female");
             epps.setRoles(Set.of(eppsRole));
+
+             */
             AppUser demo = new AppUser("demo@mail.com","demo user",passwordEncoder().encode("demo-user")
            );
 
@@ -157,37 +160,9 @@ public class SecurityConfig {
             demo.setAccountNonExpired(true);
             demo.setAccountNonLocked(true);
 
-            userRepository.save(epps);
+           // userRepository.save(epps);
             userRepository.save(demo);
 
-            /*
-            repo.save(new Category("phones","phones",0L,0L));
-            repo.save(new Category("tv","tv",0L,0L));
-            repo.save(new Category("bicycles","bike",1L,1L));
-            repo.save(new Category("shirt","shirt",0L,0L));
-            repo.save(new Category("games","games",1L,1L));
-
-
-            Attributes attr1 = attRep.save(new Attributes("colour"));
-            Attributes attr2 = attRep.save(new Attributes("size"));
-            Attributes attr3 = attRep.save(new Attributes("weight"));
-            Attributes attr4 = attRep.save(new Attributes("material"));
-
-
-
-
-           sku.save(new ProductSKU(attr1,"red","#FF0000"));
-            sku.save(new ProductSKU(attr2,"xl","xl"));
-            sku.save(new ProductSKU(attr3,"small","100kg"));
-            sku.save(new ProductSKU(attr4,"cotton","cotton"));
-
-
-
-
-            AddressBook addressBook = new AddressBook("ul.zalew","Leonow","97-320","Poland",epps);
-            addRep.save(addressBook);
-
-             */
         };
     }
 }
